@@ -42,7 +42,7 @@ exports.config = {
             'bstack:options': {
                 osVersion: '14.0',
                 deviceName: 'Google Pixel 9',
-                appiumVersion: '2.5.4',
+                appiumVersion: '1.22.0',
                 projectName: 'Native Demo App',
                 buildName: process.env.GITLAB_CI_PIPELINE_ID ? `GitLab #${process.env.GITLAB_CI_PIPELINE_ID}` : 'Local Run',
                 sessionName: 'Android Tests',
@@ -61,7 +61,7 @@ exports.config = {
             'bstack:options': {
                 osVersion: '18.0',
                 deviceName: 'iPhone 16',
-                appiumVersion: '2.5.4',
+                appiumVersion: '1.22.0',
                 projectName: 'Native Demo App',
                 buildName: process.env.GITLAB_CI_PIPELINE_ID ? `GitLab #${process.env.GITLAB_CI_PIPELINE_ID}` : 'Local Run',
                 sessionName: 'iOS Tests',
