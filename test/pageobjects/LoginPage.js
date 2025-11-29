@@ -2,7 +2,7 @@
 class LoginPage {
     get inputEmail() { return $('//*[@text="Email"]'); }
     get inputPassword() {  return $('//*[@text="Password"]'); }
-    get btnLogin() { return $('~login-btn'); }
+    get btnLogin() { return $('//*[@text="LOGIN"]'); }
     get welcomeText() { return $('~welcome-message'); }
     get successMessage() { return $('//*[@text="You are logged in!"]'); }
     get loginText() { return $('//*[@text="Login"]'); }
