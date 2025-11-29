@@ -40,7 +40,7 @@ exports.config = {
     capabilities: [
         {
             'bstack:options': {
-                osVersion: '14.0',
+                osVersion: '15.0',
                 deviceName: 'Google Pixel 9',
                 appiumVersion: '1.22.0',
                 projectName: 'Native Demo App',

@@ -34,7 +34,7 @@ jobs:
         with:
           name: allure-results-android
           path: allure-results/
-          retention-days: 7
+          retention-days: 2
 
   ios:
     name: iOS - iPhone 16
@@ -63,4 +63,4 @@ jobs:
         with:
           name: allure-results-ios
           path: allure-results/
-          retention-days: 7
+          retention-days: 2
