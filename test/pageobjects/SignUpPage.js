@@ -17,18 +17,17 @@ class LoginPage {
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();
         await this.successMessage.waitForDisplayed({ timeout: 50000 });
-        await this.btnOk.click();
-        await this.btnHome.click();
     }
 
     async loginWithErros(username = '', password = '') {
+        await this.btnOk.click();
+        await this.btnHome.click();
         await this.loginText.click();
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();
         await this.errorInvalidEmail.waitForDisplayed({ timeout: 50000 });
         await this.errorInvalidPass.waitForDisplayed({ timeout: 50000 });
-
     }
 }
 
