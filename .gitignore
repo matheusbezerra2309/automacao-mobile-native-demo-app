@@ -5,7 +5,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-
+node_modules/
+.env
+allure-results/
+allure-report/
+screenshots/
+*.log
+.DS_Store
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
