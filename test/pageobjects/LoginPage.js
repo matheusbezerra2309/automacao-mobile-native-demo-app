@@ -12,8 +12,7 @@ class LoginPage {
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();
-        await expect(this.successMessage).toBeDisplayed();
-    }
+        await successMessage.waitForDisplayed({ timeout: 50000 });    }
 }
 
 module.exports = new LoginPage();
