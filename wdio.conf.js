@@ -50,7 +50,7 @@ exports.config = {
                 networkLogs: true,
                 realMobile: 'true'
             },
-            'appium:app': process.env.BROWSERSTACK_APP_ID_ANDROID || 'bs://8543adca28c2a1506f0076b0979bb825a71f2e26', 
+            'appium:app': process.env.BROWSERSTACK_APP_ID_ANDROID || 'bs://8543adca28c2a1506f0076b0979bb825a71f2e26',
             'appium:automationName': 'UiAutomator2',
             'appium:newCommandTimeout': 300,
             'appium:noReset': false,
@@ -69,7 +69,7 @@ exports.config = {
                 networkLogs: true,
                 realMobile: 'true'
             },
-            'appium:app': process.env.BROWSERSTACK_APP_ID_IOS || 'bs://03e305df2b60d26264eabca4eea52ef1dfa5a526', 
+            'appium:app': process.env.BROWSERSTACK_APP_ID_IOS || 'bs://03e305df2b60d26264eabca4eea52ef1dfa5a526',
             'appium:automationName': 'XCUITest',
             'appium:newCommandTimeout': 300,
             'appium:noReset': false,
@@ -83,9 +83,15 @@ exports.config = {
         global.expect = chai.expect;
     },
 
+    beforeTest: async function () {
+        await browser.activateApp('com.wdiodemoapp');  
+
+    },
+    
     afterTest: async function (test, context, { error }) {
         if (error) {
             await browser.takeScreenshot();
+            await browser.terminateApp('com.wdiodemoapp');
         }
     },
 

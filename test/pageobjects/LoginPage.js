@@ -30,6 +30,15 @@ class LoginPage {
         await this.errorInvalidPass.waitForDisplayed({ timeout: 50000 });
 
     }
+
+    async loginWithInvalidEmail(username = 'bob@examp', password = '10203040') {
+        await this.loginText.click();
+        await this.inputEmail.setValue(username);
+        await this.inputPassword.setValue(password);
+        await this.btnLogin.click();
+        await this.errorInvalidEmail.waitForDisplayed({ timeout: 50000 });
+
+    }
 }
 
 module.exports = new LoginPage();
