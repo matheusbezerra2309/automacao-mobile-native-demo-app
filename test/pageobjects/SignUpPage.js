@@ -10,6 +10,8 @@ class LoginPage {
     get errorInvalidPass() { return $('//*[@text="Please enter at least 8 characters"]'); }
     get btnOk() { return $('//*[@text="OK"]'); }
     get btnHome() { return $('//*[@text="Home"]'); }
+    get campoEmail() { return $('~input-email'); }      
+    get campoSenha() { return $('~input-password'); }
 
     async login(username = 'bob@example.com', password = '10203040') {
         await this.loginText.click();
@@ -21,10 +23,8 @@ class LoginPage {
 
     async loginWithErros(username = '', password = '') {
         await this.btnOk.click();
-        await this.btnHome.click();
-        await this.loginText.click();
-        await this.inputEmail.setValue(username);
-        await this.inputPassword.setValue(password);
+        await this.campoEmail.clearValue();
+        await this.campoSenha.clearValue();
         await this.btnLogin.click();
         await this.errorInvalidEmail.waitForDisplayed({ timeout: 50000 });
         await this.errorInvalidPass.waitForDisplayed({ timeout: 50000 });
