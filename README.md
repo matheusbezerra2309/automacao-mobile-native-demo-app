@@ -14,30 +14,28 @@ Projeto para prova **Native Demo App v1.0.8** (React Native) rodando em **dispos
 - BrowserStack (devices reais: Pixel 9 + iPhone 16)
 
 ### Estrutura de pastas
-automacao-mobile-native-demo-app/
-├── test/
-│   ├── pageobjects/           ← Page Objects (reutilizáveis)
-│   │   ├── HomePage.js
-│   │   ├── LoginPage.js
-│   │   ├── SwipePage.js
-│   │   ├── DragPage.js
-│   │   ├── SignUpPage.js
-│   │   ├── WebViewPage.js  
-│   │
-│   └── specs/                     ← Testes organizados por funcionalidade
-│       ├── login.spec.js
-│       ├── swipe.spec.js
-│       ├── form.spec.js
-│       ├── singUp.spec.js
-│       ├── drag.spec.js
-│       ├── webview.spec.js
-│
-├── wdio.conf.js                   ← Configuração principal (BrowserStack + Allure + hooks)
-├── package.json
-├── .github/
-│   └── workflows/
-│       └── e2e.yml                ← CI que roda Android + iOS em paralelo e gera relatório único
-└── allure-report/                 ← Gerado automaticamente no CI (HTML final)
+automacao-mobile-native-demo-app/  
+├── test/    
+│   ├─ pageobjects/             ← Page Objects (reutilizáveis)  
+│   │     ├── HomePage.js  
+│   │     ├── LoginPage.js  
+│   │     ├── SwipePage.js  
+│   │     ├── DragPage.js  
+│   │     ├── SignUpPage.js  
+│   │     ├── WebViewPage.js    
+│   └─ specs/                       ← Testes organizados por funcionalidade  
+│         ├── login.spec.js  
+│         ├── swipe.spec.js  
+│         ├── form.spec.js  
+│         ├── singUp.spec.js  
+│         ├── drag.spec.js  
+│         ├── webview.spec.js    
+├── wdio.conf.js                     ← Configuração principal (BrowserStack + Allure + hooks)  
+├── package.json    
+├── .github/    
+│   └── workflows/    
+│       └── e2e.yml                  ← CI que roda Android + iOS em paralelo e gera relatório único  
+└── allure-report/                   ← Gerado automaticamente no CI (HTML final)  
 
 ### Cenários
 
