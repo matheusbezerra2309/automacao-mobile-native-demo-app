@@ -12,7 +12,7 @@ class LoginPage {
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();
-        await expect(this.successMessage).toBeExisting();
+        await expect(this.successMessage).toBeDisplayed();
     }
 }
 
