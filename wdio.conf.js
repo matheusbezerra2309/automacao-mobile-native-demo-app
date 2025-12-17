@@ -87,6 +87,10 @@ exports.config = {
 
     beforeTest: async function () {
         await browser.activateApp('com.wdiodemoapp');
+        await browser.setOrientation('PORTRAIT');  // Comando WDIO/Appium padrão
+        await browser.pause(2000);
+        const orientation = await browser.getOrientation();
+        console.log('Orientação após force:', orientation);  // Deve logar 'PORTRAIT'
 
     },
 
