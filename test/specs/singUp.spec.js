@@ -11,6 +11,6 @@ describe('Native Demo App - Sign Up', () => {
     });
 
     it('Validar mensagem ao incluir um email inválido', async () => {
-        await SignUpPage.signUpWithEmpty();
+        await SignUpPage.signUpWithInvalidEmail();
     });
 });

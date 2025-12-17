@@ -4,12 +4,15 @@ class FormPage {
     get switchDarkMode() { return $('~dark-mode-switch'); }
     get activeText() { return $('//*[@text="Active"]'); }
     get activeMessageText() { return $('//*[@text="This button is active"]'); }
+    get formsText() { return $('//*[@text="Forms"]'); }
+
 
     async form(textExample = 'bob@example.com') {
+        await this.formsText.click();
         await this.typeText.click();
         await this.typeText.setValue(textExample);
-        ativarDarkMode(); 
-        desativarDarkMode();
+        await this.ativarDarkMode();
+        await this.desativarDarkMode();
         await this.activeText.click();
         await this.activeMessageText.waitForDisplayed({ timeout: 50000 });
 

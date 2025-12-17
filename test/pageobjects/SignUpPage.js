@@ -5,7 +5,7 @@ class SignUpPage {
     get loginText() { return $('//*[@text="Login"]'); }
     get signUpText() { return $('//*[@text="Sign up"]'); }
     get confirmPassword() { return $('//*[@text="Confirm password"]'); }
-    get signUpText() { return $('//*[@text="SIGN UP"]'); }
+    get signUpTextBtn() { return $('//*[@text="SIGN UP"]'); }
     get messageText() { return $('//*[@text="You successfully signed up!"]'); }
     get errorInvalidEmail() { return $('//*[@text="Please enter a valid email address"]'); }
     get errorInvalidPass() { return $('//*[@text="Please enter at least 8 characters"]'); }
@@ -18,7 +18,7 @@ class SignUpPage {
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
         await this.confirmPassword.setValue(password);
-        await this.signUpText.click();
+        await this.signUpTextBtn.click();
         await this.messageText.waitForDisplayed({ timeout: 50000 });
     }
 
@@ -28,7 +28,7 @@ class SignUpPage {
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
         await this.confirmPassword.setValue(password);
-        await this.signUpText.click();
+        await this.signUpTextBtn.click();
         await this.errorInvalidEmail.waitForDisplayed({ timeout: 50000 });
         await this.errorInvalidPass.waitForDisplayed({ timeout: 50000 });
         await this.errorInvalidConfirmPass.waitForDisplayed({ timeout: 50000 });
@@ -40,7 +40,7 @@ class SignUpPage {
         await this.signUpText.click();
         await this.inputEmail.setValue(username);
         await this.inputPassword.setValue(password);
-        await this.signUpText.click();
+        await this.signUpTextBtn.click();
         await this.errorInvalidEmail.waitForDisplayed({ timeout: 50000 });
 
     }
