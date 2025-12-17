@@ -48,11 +48,12 @@ exports.config = {
                 sessionName: 'Android Tests',
                 debug: true,
                 networkLogs: true,
+                deviceOrientation: 'portrait',
                 realMobile: 'true'
             },
             'appium:app': process.env.BROWSERSTACK_APP_ID_ANDROID || 'bs://70f9abeff319b76600e2c24104cefcb17adef035',
             'appium:automationName': 'UiAutomator2',
-            'appium:newCommandTimeout': 300,
+            'appium:newCommandTimeout': 5000,
             'appium:noReset': false,
             platformName: 'Android'
         },
@@ -60,18 +61,19 @@ exports.config = {
         {
             'bstack:options': {
                 osVersion: '18.0',
-                deviceName: 'iPhone 16',
-                appiumVersion: '1.22.0',
+                deviceName: 'iPhone 15',
+                appiumVersion: '2.6.0',
                 projectName: 'Native Demo App',
                 buildName: process.env.GITLAB_CI_PIPELINE_ID ? `GitLab #${process.env.GITLAB_CI_PIPELINE_ID}` : 'Local Run',
                 sessionName: 'iOS Tests',
                 debug: true,
                 networkLogs: true,
+                deviceOrientation: 'portrait',
                 realMobile: 'true'
             },
             'appium:app': process.env.BROWSERSTACK_APP_ID_IOS || 'bs://c36a3138aae08d6db4c39e8301e49d844bb40524',
             'appium:automationName': 'XCUITest',
-            'appium:newCommandTimeout': 300,
+            'appium:newCommandTimeout': 5000,
             'appium:noReset': false,
             platformName: 'iOS'
         }
@@ -84,10 +86,10 @@ exports.config = {
     },
 
     beforeTest: async function () {
-        await browser.activateApp('com.wdiodemoapp');  
+        await browser.activateApp('com.wdiodemoapp');
 
     },
-    
+
     afterTest: async function (test, context, { error }) {
         if (error) {
             await browser.takeScreenshot();
