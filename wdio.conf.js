@@ -50,7 +50,7 @@ exports.config = {
                 networkLogs: true,
                 realMobile: 'true'
             },
-            'appium:app': process.env.BROWSERSTACK_APP_ID_ANDROID || 'bs://8543adca28c2a1506f0076b0979bb825a71f2e26',
+            'appium:app': process.env.BROWSERSTACK_APP_ID_ANDROID || 'bs://70f9abeff319b76600e2c24104cefcb17adef035',
             'appium:automationName': 'UiAutomator2',
             'appium:newCommandTimeout': 300,
             'appium:noReset': false,
@@ -69,7 +69,7 @@ exports.config = {
                 networkLogs: true,
                 realMobile: 'true'
             },
-            'appium:app': process.env.BROWSERSTACK_APP_ID_IOS || 'bs://03e305df2b60d26264eabca4eea52ef1dfa5a526',
+            'appium:app': process.env.BROWSERSTACK_APP_ID_IOS || 'bs://c36a3138aae08d6db4c39e8301e49d844bb40524',
             'appium:automationName': 'XCUITest',
             'appium:newCommandTimeout': 300,
             'appium:noReset': false,
