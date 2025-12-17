@@ -11,6 +11,7 @@ class FormPage {
         await this.formsText.click();
         await this.typeText.click();
         await this.typeText.setValue(textExample);
+        await this.hideKeyboard();
         await this.activeText.click();
         await this.activeMessageText.waitForDisplayed({ timeout: 50000 });
 
