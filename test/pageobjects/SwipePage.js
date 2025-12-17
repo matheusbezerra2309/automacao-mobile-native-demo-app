@@ -1,7 +1,7 @@
 // test/pageobjects/SwipePage.js
 class SwipePage {
     get swipeText() { return $('//*[@text="Swipe"]'); }
-    get swipeMessageText() { return $('~Or swipe vertical to find what I\'m hiding.'); }
+    get swipeMessageText() { return $('//*[@text="Swipe horizontal"]'); }
 
     async swipe() {
         await this.swipeText.click();
