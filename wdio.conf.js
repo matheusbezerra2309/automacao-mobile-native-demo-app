@@ -60,7 +60,7 @@ exports.config = {
 
         {
             'bstack:options': {
-                osVersion: '18.0',
+                osVersion: 'latest',
                 deviceName: 'iPhone 15',
                 appiumVersion: '2.6.0',
                 projectName: 'Native Demo App',

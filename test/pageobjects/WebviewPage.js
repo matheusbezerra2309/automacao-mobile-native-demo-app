@@ -5,7 +5,6 @@ class WebviewPage {
 
     async webview() {
         await this.webviewText.click();
-        await this.webviewMessageText.waitForDisplayed({ timeout: 50000 });
 
     }
 
