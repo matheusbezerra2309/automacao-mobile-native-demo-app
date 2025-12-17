@@ -10,6 +10,8 @@ class SignUpPage {
     get errorInvalidEmail() { return $('//*[@text="Please enter a valid email address"]'); }
     get errorInvalidPass() { return $('//*[@text="Please enter at least 8 characters"]'); }
     get errorInvalidConfirmPass() { return $('//*[@text="Please enter the same password"]'); }
+    get btnOk() { return $('//*[@text="OK"]'); }
+    get btnHome() { return $('//*[@text="Home"]'); }
 
 
     async signUp(username = 'bob@example.com', password = '10203040') {
@@ -20,6 +22,8 @@ class SignUpPage {
         await this.confirmPassword.setValue(password);
         await this.signUpTextBtn.click();
         await this.messageText.waitForDisplayed({ timeout: 50000 });
+        await this.btnOk.click();
+        await this.btnHome.click();
     }
 
     async signUpWithEmpty(username = '', password = '') {
@@ -35,7 +39,7 @@ class SignUpPage {
 
     }
 
-    async signUpWithInvalidEmail(username = 'bob@exampl', password = '10203040') {
+    async signUpWithInvalidEmail(username = 'bob', password = '10203040') {
         await this.loginText.click();
         await this.signUpText.click();
         await this.inputEmail.setValue(username);

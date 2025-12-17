@@ -97,8 +97,12 @@ exports.config = {
     afterTest: async function (test, context, { error }) {
         if (error) {
             await browser.takeScreenshot();
-            await browser.terminateApp('com.wdiodemoapp');
         }
+
+        const appId = driver.isAndroid ? 'com.wdiodemoapp' : 'org.reactjs.native.example.WDIO-DemoApp';
+        await browser.terminateApp(appId);
+        await browser.execute('mobile: clearApp', { appId });
+        console.log('App fechado e dados limpos (sem uninstall)');
     },
 
     onComplete: function () {
