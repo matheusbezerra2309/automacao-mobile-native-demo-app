@@ -86,7 +86,10 @@ exports.config = {
     },
 
     beforeTest: async function () {
-        await browser.activateApp('com.wdiodemoapp');
+        const appId = driver.isAndroid 
+            ? 'com.wdiodemoapp' 
+            : 'org.reactjs.native.example.wdiodemoapp';
+        await browser.activateApp(appId);
         await browser.setOrientation('PORTRAIT');  // Comando WDIO/Appium padrão
         await browser.pause(2000);
         const orientation = await browser.getOrientation();
@@ -99,7 +102,9 @@ exports.config = {
             await browser.takeScreenshot();
         }
 
-        const appId = driver.isAndroid ? 'com.wdiodemoapp' : 'org.reactjs.native.example.WDIO-DemoApp';
+        const appId = driver.isAndroid 
+            ? 'com.wdiodemoapp' 
+            : 'org.reactjs.native.example.wdiodemoapp';
         await browser.terminateApp(appId);
         await browser.execute('mobile: clearApp', { appId });
         console.log('App fechado e dados limpos (sem uninstall)');
